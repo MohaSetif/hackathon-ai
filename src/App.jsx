@@ -2,11 +2,33 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { Dashboard, Auth } from "@/layouts";
 import { Link } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Card from "./components/Card";
+import image from "../public/img/home-decor-1.jpeg"
 
 const routes = [
   {name: "About", link: "about"},
   {name: "Services", link: "services"},
   {name: "Contact us", link: "contact"},
+]
+
+const cards = [
+  {
+    title: "Title One",
+    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores pariatur veniam sunt quasi praesentium a deserunt impedit quos aspernatur ducimus libero neque maxime, laboriosam expedita veritatis molestias similique minima placeat!",
+  },
+  {
+    title: "Title Two",
+    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores pariatur veniam sunt quasi praesentium a deserunt impedit quos aspernatur ducimus libero neque maxime, laboriosam expedita veritatis molestias similique minima placeat!",
+  },
+  {
+    title: "Title Three",
+    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores pariatur veniam sunt quasi praesentium a deserunt impedit quos aspernatur ducimus libero neque maxime, laboriosam expedita veritatis molestias similique minima placeat!",
+  },
+  {
+    title: "Title Four",
+    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores pariatur veniam sunt quasi praesentium a deserunt impedit quos aspernatur ducimus libero neque maxime, laboriosam expedita veritatis molestias similique minima placeat!",
+  }
 ]
 
 function App() {
@@ -49,6 +71,41 @@ function App() {
                   </div>
                 </Link>
               </div>
+              <Card cards={cards} />
+              <div className="my-24 flex flex-col items-center space-y-8">
+                <a href="#" className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-6xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 transition-transform transform hover:scale-105">
+                  <img
+                    className="object-cover w-full h-96 md:h-96 md:w-96 md:rounded-none md:rounded-s-lg"
+                    src={image}
+                    alt="Card 1"
+                  />
+                  <div className="flex flex-col justify-between p-8 leading-normal">
+                    <h5 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+                      Noteworthy Technology Acquisitions 2021
+                    </h5>
+                    <p className="mb-6 text-lg font-normal text-gray-700 dark:text-gray-400">
+                      Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+                    </p>
+                  </div>
+                </a>
+
+                <a href="#" className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-6xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 transition-transform transform hover:scale-105" >
+                  <div className="flex flex-col justify-between p-8 leading-normal">
+                    <h5 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+                      Noteworthy Technology Acquisitions 2021
+                    </h5>
+                    <p className="mb-6 text-lg font-normal text-gray-700 dark:text-gray-400">
+                      Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+                    </p>
+                  </div>
+                  <img
+                    className="object-cover w-full h-96 md:h-96 md:w-96 md:rounded-none md:rounded-e-lg"
+                    src={image}
+                    alt="Card 2"
+                  />
+                </a>
+              </div>
+              <Footer routes={routes} />
             </div>
           </div>
       </div>
