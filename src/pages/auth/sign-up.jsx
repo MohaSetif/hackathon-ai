@@ -1,18 +1,9 @@
-import {
-  Select,
-  Card,
-  Input,
-  Checkbox,
-  Button,
-  Typography,
-  MenuItem,
-} from "@material-tailwind/react";
-import { useState } from "react";
+import { Select, Card, Input, Checkbox, Button, Typography, MenuItem } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 
 export function SignUp() {
   return (
-    <section className="m-8 flex flex-col lg:flex-row gap-8 items-center">
+    <section className="flex flex-col lg:flex-row gap-4 items-center">
       {/* Form Section */}
       <div className="w-full lg:w-3/5 flex flex-col items-center">
         <div className="text-center">
@@ -46,11 +37,24 @@ export function SignUp() {
                 </Typography>
               }
             />
+            <Checkbox
+              label={
+                <Typography variant="small" color="gray" className="font-medium">
+                  Did you perform any surgery before?
+                </Typography>
+              }
+            />
+            <Checkbox
+              label={
+                <Typography variant="small" color="gray" className="font-medium">
+                  Do you any hereditary disease?
+                </Typography>
+              }
+            />
             <Input size="lg" label="Your Phone Number"/>
             <Input size="lg" label="Relative's Phone Number"/>
-            <label id="demo-simple-select-label">Situation</label>
             <Select
-              labelId="demo-simple-select-label"
+              size="lg"
               id="demo-simple-select"
               value="situation"
               label="Situation"
@@ -61,7 +65,25 @@ export function SignUp() {
               <MenuItem value="semi-urgent">Semi Urgent</MenuItem>
               <MenuItem value="non-urgent">Non Urgent</MenuItem>
             </Select>
+            
+            <label htmlFor="lifestyle">Do you:</label>
+            <Checkbox
+              label={
+                <Typography variant="small" color="gray" className="font-medium">
+                  Smoke?
+                </Typography>
+              }
+            />
+            <Checkbox
+              label={
+                <Typography variant="small" color="gray" className="font-medium">
+                  Drink alcohol?
+                </Typography>
+              }
+            />
           </div>
+
+          <hr className="divide-y-4" />
 
           <Checkbox
             label={
@@ -73,15 +95,7 @@ export function SignUp() {
           />
 
           <Button className="mt-6 w-full">Sign Up</Button>
-          <Checkbox
-            label={
-              <Typography variant="small" color="gray" className="font-medium">
-                Subscribe me to the newsletter
-              </Typography>
-            }
-            className="mt-4"
-          />
-
+         
           <Typography variant="paragraph" className="text-center text-blue-gray-500 font-medium mt-4">
             Already have an account?
             <Link to="/auth/sign-in" className="text-gray-900 ml-1">Sign In</Link>
@@ -89,7 +103,7 @@ export function SignUp() {
         </form>
       </div>
 
-      <div className="w-full lg:w-2/5 hidden lg:block">
+      <div className="w-full lg:w-3/5 hidden lg:block">
         <img
           src="/img/pattern.png"
           className="h-full w-full object-cover rounded-3xl"
